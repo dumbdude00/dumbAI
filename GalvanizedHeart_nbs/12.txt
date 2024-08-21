@@ -1,0 +1,160 @@
+Emb_mlp:
+    BatchNorm1d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): OK -2.6114284992218018e-06
+    SiLU(): OK 0.07868527621030807
+    Linear(in_features=16, out_features=64, bias=True): OK 0.0094757080078125
+    SiLU(): OK 0.0198516845703125
+    Linear(in_features=64, out_features=64, bias=True): OK -0.00682830810546875
+
+In Conv:
+    Conv2d(3, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): OK 0.020782470703125
+
+Down 1:
+    BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): OK -8.344650268554688e-07
+    SiLU(): OK 0.1978759765625
+    Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): OK -0.007358551025390625
+    Linear(in_features=64, out_features=32, bias=True): OK -0.0206146240234375
+    BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): OK -2.980232238769531e-07
+    SiLU(): OK 0.197021484375
+    Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): OK -0.01410675048828125
+    Conv2d(16, 16, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1)): OK -0.025421142578125
+
+Down 2:
+    BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): OK -3.5762786865234375e-07
+    SiLU(): OK 0.197998046875
+    Conv2d(16, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): OK 0.0028171539306640625
+    Linear(in_features=64, out_features=64, bias=True): OK 0.006656646728515625
+    BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): OK 1.1920928955078125e-07
+    SiLU(): OK 0.1962890625 
+    Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): OK 0.0010309219360351562
+    Conv2d(16, 32, kernel_size=(1, 1), stride=(1, 1)): OK 0.054718017578125
+    Conv2d(32, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1)): OK 0.02288818359375
+
+Down 3:
+    BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): OK -5.364418029785156e-07
+    SiLU(): OK 0.1988525390625
+    Conv2d(32, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): OK 0.009552001953125
+    Linear(in_features=64, out_features=96, bias=True): OK -0.001983642578125
+    BatchNorm2d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): OK 2.384185791015625e-07
+    SiLU(): OK 0.197509765625
+    Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): OK 0.0005435943603515625
+    Conv2d(32, 48, kernel_size=(1, 1), stride=(1, 1)): OK -0.039337158203125
+    Conv2d(48, 48, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1)): OK 0.00543212890625
+
+Down 4:
+    BatchNorm2d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): OK -7.152557373046875e-07
+    SiLU(): OK 0.2005615234375
+    Conv2d(48, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): OK 0.004650115966796875
+    Linear(in_features=64, out_features=128, bias=True): OK -0.00787353515625
+    BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): OK -2.384185791015625e-07
+    SiLU(): OK 0.199951171875
+    Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): OK 0.005218505859375
+    Conv2d(48, 64, kernel_size=(1, 1), stride=(1, 1)): OK -0.0031414031982421875
+    Identity(): OK 0.0020732879638671875
+
+Mid: 
+    BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): OK 1.7881393432617188e-07
+    SiLU(): OK 0.1973876953125
+    Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): OK -0.001659393310546875
+    Linear(in_features=64, out_features=128, bias=True): OK -0.00238800048828125
+    BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): OK -9.5367431640625e-07
+    SiLU(): OK 0.2010498046875
+    Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): OK -0.0205078125
+
+Up 1:
+    BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): OK 3.5762786865234375e-07
+    SiLU(): OK 0.1983642578125
+    Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): OK 0.002010345458984375
+    Linear(in_features=64, out_features=128, bias=True): OK 0.003711700439453125
+    BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): OK -2.980232238769531e-07
+    SiLU(): OK 0.199462890625
+    Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): OK -0.003520965576171875
+    Conv2d(128, 64, kernel_size=(1, 1), stride=(1, 1)): OK 0.0209503173828125
+
+    BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): OK -3.5762786865234375e-07
+    SiLU(): OK 0.1998291015625
+    Conv2d(112, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): OK -0.0162506103515625
+    Linear(in_features=64, out_features=128, bias=True): OK -0.004001617431640625
+    BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): OK 9.5367431640625e-07
+    SiLU(): OK 0.19775390625
+    Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): OK -0.0004572868347167969
+    Conv2d(112, 64, kernel_size=(1, 1), stride=(1, 1)): OK 0.002765655517578125
+
+    # The issue seems to happen here even with multiple different random seeds!
+    # Mean activations for each layer look reasonable and all of a sudden become NaN!
+    # This issue does not occur on CPU, but does occur on my GPU!
+    ---------------------------------------------------------------------------------
+    Upsample(scale_factor=2.0, mode='nearest'): OK 0.002307891845703125
+    Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): NaN or Inf detected
+    - Converting to float16 doesn't help.
+    - Converting to float32 doesn't help.
+
+
+Up 2:
+    BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): NaN or Inf detected
+    SiLU(): NaN or Inf detected
+    Conv2d(112, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): NaN or Inf detected
+    Linear(in_features=64, out_features=96, bias=True): OK
+    BatchNorm2d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): NaN or Inf detected
+    SiLU(): NaN or Inf detected
+    Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): NaN or Inf detected
+    Conv2d(112, 48, kernel_size=(1, 1), stride=(1, 1)): NaN or Inf detected
+
+    BatchNorm2d(80, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): NaN or Inf detected
+    SiLU(): NaN or Inf detected
+    Conv2d(80, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): NaN or Inf detected
+    Linear(in_features=64, out_features=96, bias=True): OK
+    BatchNorm2d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): NaN or Inf detected
+    SiLU(): NaN or Inf detected
+    Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): NaN or Inf detected
+
+    Conv2d(80, 48, kernel_size=(1, 1), stride=(1, 1)): NaN or Inf detected
+    Upsample(scale_factor=2.0, mode='nearest'): NaN or Inf detected
+    Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): NaN or Inf detected
+
+Up 3:
+    BatchNorm2d(80, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): NaN or Inf detected
+    SiLU(): NaN or Inf detected
+    Conv2d(80, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): NaN or Inf detected
+    Linear(in_features=64, out_features=64, bias=True): OK
+    BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): NaN or Inf detected
+    SiLU(): NaN or Inf detected
+    Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): NaN or Inf detected
+    Conv2d(80, 32, kernel_size=(1, 1), stride=(1, 1)): NaN or Inf detected
+    
+    BatchNorm2d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): NaN or Inf detected
+    SiLU(): NaN or Inf detected
+    Conv2d(48, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): NaN or Inf detected
+    Linear(in_features=64, out_features=64, bias=True): OK
+    BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): NaN or Inf detected
+    SiLU(): NaN or Inf detected
+    Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): NaN or Inf detected
+    Conv2d(48, 32, kernel_size=(1, 1), stride=(1, 1)): NaN or Inf detected
+
+    Upsample(scale_factor=2.0, mode='nearest'): NaN or Inf detected
+    Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): NaN or Inf detected
+
+Up 4:
+    BatchNorm2d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): NaN or Inf detected
+    SiLU(): NaN or Inf detected
+    Conv2d(48, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): NaN or Inf detected
+    Linear(in_features=64, out_features=32, bias=True): OK
+    BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): NaN or Inf detected
+    SiLU(): NaN or Inf detected
+    Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): NaN or Inf detected
+    Conv2d(48, 16, kernel_size=(1, 1), stride=(1, 1)): NaN or Inf detected
+    
+    BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): NaN or Inf detected
+    SiLU(): NaN or Inf detected
+    Conv2d(32, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): NaN or Inf detected
+    Linear(in_features=64, out_features=32, bias=True): OK
+    BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): NaN or Inf detected
+    SiLU(): NaN or Inf detected
+    Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)): NaN or Inf detected
+    Conv2d(32, 16, kernel_size=(1, 1), stride=(1, 1)): NaN or Inf detected
+
+    Identity(): NaN or Inf detected
+
+Out Conv:
+    BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True): NaN or Inf detected
+    SiLU(): NaN or Inf detected
+    Conv2d(16, 3, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False): NaN or Inf detected
